@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recycle Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>재활용 비율</h1>
+    <div class="chart-container">
+        <canvas id="recycleChart"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('recycleChart').getContext('2d');
+        const recycleChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['재활용된 것', '재활용되지 않은 것'],
+                datasets: [{
+                    data: [70, 30],  // 예시 데이터, 실제 데이터로 변경 필요
+                    backgroundColor: ['#4CAF50', '#FF5722'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: '재활용 비율'
+                    }
+                }
+            },
+        });
+    </script>
+</body>
+</html>

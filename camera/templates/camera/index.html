@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera Stream</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>캡스톤디자인 9조</h1>
+    </div>
+    <div class="container">
+        <button id="open-popup-button" class="button">재활용 분류 머신</button>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>카메라 스트림</h2>
+            <img class="camera-image" src="{% url 'video_feed' %}" alt="Camera Stream">
+            <button id="close-popup-button" class="close-button">닫기</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
